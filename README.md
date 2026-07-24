@@ -9,4 +9,4 @@ Sitedeki tüm ekonomi, borsa, tapu ve VIP kredi kartı işlemlerini yöneten res
 - **Banka Tüzüğü:** Resmi haciz ve banka kuralları panosu.
 
 ## 🏢 Yönetim
-- **Genel Başkan Kürşat Erdoğan & Yönetim Kurul Başkanı Yunus Acar**
+- **Genel Başkan Kürşat Erdoğan & Yönetim Kurulu Yunus Acar**
