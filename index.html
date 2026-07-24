@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Finans Bank A.Ş. | Sitenin Finans Devı</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-crown">👑</div>
+        <h1>ROYAL FİNANS BANK A.Ş.</h1>
+        <p class="subtitle">Sitenin Güvencesi • Giriş Katı Merkez Ofisi</p>
+    </header>
+
+    <main class="container">
+        
+        <!-- VIP Kredi Kartı Kartı -->
+        <section class="card">
+            <h2>💳 Royal Black VIP Card</h2>
+            <p class="card-desc">Sitedeki tüm harcamalar, bilet alımları ve rütbe geçişlerinde geçerli resmi banka kartı.</p>
+            
+            <div class="credit-card">
+                <div class="card-header">
+                    <span class="card-title">ROYAL FİNANS</span>
+                    <span>👑</span>
+                </div>
+                <div class="chip"></div>
+                <div class="card-number">7777 8888 9999 0001</div>
+                <div class="card-footer">
+                    <div>
+                        <div class="label">KART SAHİBİ</div>
+                        <div class="card-holder">GENEL BAŞKAN / VIP</div>
+                    </div>
+                    <div>
+                        <div class="label">SKOR</div>
+                        <div class="skor">100 / 100</div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn" onclick="basvuruYap()">Yeni Kart Başvurusu Yap</button>
+        </section>
+
+        <!-- Canlı Blok Borsası -->
+        <section class="card">
+            <h2>📈 Blok Hisseleri & Borsa</h2>
+            <p class="card-desc">Sitedeki blokların anlık piyasa değerleri:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>BLOK / VARLIK</th>
+                        <th>DEĞER</th>
+                        <th>DEĞİŞİM</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A Bloğu (Park Yanı)</td>
+                        <td>5.0 TL</td>
+                        <td class="up">+15% 🚀</td>
+                    </tr>
+                    <tr>
+                        <td>B Bloğu (Orta Alan)</td>
+                        <td>3.5 TL</td>
+                        <td class="up">+5% 📈</td>
+                    </tr>
+                    <tr>
+                        <td>C Bloğu (Arka Alan)</td>
+                        <td>2.0 TL</td>
+                        <td class="down">-10% 📉</td>
+                    </tr>
+                    <tr>
+                        <td>1 Gram Altın</td>
+                        <td>8.0 TL</td>
+                        <td class="up">+25% 💎</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn" onclick="islemYap()">Hisse / Altın Al-Sat</button>
+        </section>
+
+        <!-- Kredi & Faiz Hesaplama Aracı -->
+        <section class="card">
+            <h2>🧮 Hızlı Kredi Hesaplayıcı</h2>
+            <p class="card-desc">İhtiyacın olan tutarı gir, geri ödemeni hesapla:</p>
+            
+            <div class="calc-box">
+                <label for="krediTutar">Çekilecek Tutar (TL):</label>
+                <input type="number" id="krediTutar" placeholder="Örn: 10" value="10">
+                
+                <p class="calc-result">Haftalık Geri Ödeme (%50 Faiz): <span id="geriOdeme">15 TL</span></p>
+            </div>
+            <button class="btn" onclick="krediBasvurusu()">Kredi Talebi Gönder</button>
+        </section>
+
+        <!-- Banka Kuralları & Duyurular -->
+        <section class="card">
+            <h2>📜 Banka Tüzüğü & Duyurular</h2>
+            <ul class="rules-list">
+                <li>🔹 <strong>Borç Ödemeleri:</strong> Kredi borçları her Cuma günü saat 17:00'ye kadar kapatılmalıdır.</li>
+                <li>🔹 <strong>Haciz Kuralı:</strong> Zamanında ödenmeyen borçlarda B ve C Blok tapularına el konulur.</li>
+                <li>🔹 <strong>Faiz Oranı:</strong> Hızlı kredilerde haftalık faiz %50 olarak uygulanır.</li>
+                <li>🔹 <strong>Kiralık Kasa:</strong> Tapu ve bilet koruma kasası haftalık 2 TL'dir.</li>
+            </ul>
+            <div class="announcement">
+                <strong>📢 Şirket Duyurusu:</strong> Eski Subank A.Ş. kapatılmış, yerine resmi olarak Royal Finans Bank kurulmuştur!
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 ROYAL FİNANS BANK A.Ş. • Tüm Hakları Sitedeki Yönetim Masası'na Aittir.</p>
+        <p class="footer-sub">Genel Başkan & Yunus Yönetiminde</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
