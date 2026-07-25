@@ -3,19 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Royal Finans Bank A.Ş. | Sitenin Finans Devı</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Royal Finans Bank A.Ş. | Kurumsal Web Portalı</title>
+    <style>
+        :root {
+            --bg-color: #0b1120;
+            --card-bg: #1e293b;
+            --gold: #d4af37;
+            --gold-bright: #f59e0b;
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 2px solid var(--gold);
+            background: linear-gradient(180deg, rgba(212,175,55,0.15) 0%, rgba(11,17,32,1) 100%);
+        }
+
+        .logo-crown {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: var(--gold);
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        .card-full {
+            grid-column: 1 / -1;
+        }
+
+        .card h2 {
+            color: var(--gold);
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-desc {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* VIP Kredi Kartı */
+        .credit-card {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 2px solid var(--gold);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-title {
+            font-weight: bold;
+            color: var(--gold);
+        }
+
+        .chip {
+            width: 45px;
+            height: 35px;
+            background: linear-gradient(135deg, #f59e0b, #b45309);
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        .card-number {
+            font-family: monospace;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .label {
+            font-size: 0.6rem;
+            color: var(--text-sub);
+        }
+
+        .card-holder {
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        .skor {
+            color: #22c55e;
+            font-weight: bold;
+        }
+
+        /* Tablo Stilleri */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            font-size: 0.9rem;
+        }
+
+        th {
+            color: var(--gold);
+            background: rgba(0,0,0,0.2);
+        }
+
+        .up { color: #22c55e; font-weight: bold; }
+        .down { color: #ef4444; font-weight: bold; }
+
+        /* Kurallar ve Hizmetler */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .service-item {
+            background: rgba(15, 23, 42, 0.6);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid var(--gold);
+        }
+
+        .service-item h4 {
+            color: var(--gold-bright);
+            margin-bottom: 5px;
+        }
+
+        .service-item p {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+        }
+
+        /* Butonlar */
+        .btn {
+            background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+            color: #000;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(212,175,55,0.2);
+            padding-top: 20px;
+        }
+
+        .footer-sub {
+            font-size: 0.85rem;
+            margin-top: 5px;
+            color: var(--gold);
+        }
+    </style>
 </head>
 <body>
 
     <header>
         <div class="logo-crown">👑</div>
         <h1>ROYAL FİNANS BANK A.Ş.</h1>
-        <p class="subtitle">Sitenin Güvencesi • Giriş Katı Merkez Ofisi</p>
+        <p class="subtitle">Güçlü Sermaye • Güvenli Gelecek • Giriş Katı Merkez Ofisi</p>
     </header>
 
     <main class="container">
         
+        <!-- Kurumsal Şirket Profili (Hakkımızda) -->
+        <section class="card card-full">
+            <h2>🏛️ Kurumsal Şirket Profili</h2>
+            <p class="card-desc">
+                <strong>Royal Finans Bank A.Ş.</strong>; sitemizdeki tüm finansal akışı, mülkiyet haklarını, yatırım süreçlerini ve ticaret güvenliğini tek bir çatı altında toplayan resmi finans kurumudur. Sitedeki üyelerin varlıklarını güvence altına almak, şeffaf bir bankacılık altyapısı sunmak ve ticari büyümeyi desteklemek amacıyla kurulmuştur.
+            </p>
+            <div class="service-grid">
+                <div class="service-item">
+                    <h4>💳 VIP Bankacılık</h4>
+                    <p>Kişiye özel kredi limitleri, resmi üyelik kartları ve güvenli hesap yönetimi.</p>
+                </div>
+                <div class="service-item">
+                    <h4>📊 Risk & Kredi Tahsis</h4>
+                    <p>Finansal analizler ile düşük faizli hızlı kredi ve borç yapılandırma çözümleri.</p>
+                </div>
+                <div class="service-item">
+                    <h4>📈 Varlık & Borsa</h4>
+                    <p>Blok hisseleri, altın ve döviz alım-satımında anlık piyasa takibi.</p>
+                </div>
+                <div class="service-item">
+                    <h4>📜 Tapu Sicil & Mülkiyet</h4>
+                    <p>Sitedeki alan ve varlıkların resmi onay, tapu kayıt ve devir süreçleri.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- VIP Kredi Kartı Kartı -->
         <section class="card">
             <h2>💳 Royal Black VIP Card</h2>
@@ -39,7 +290,7 @@
                     </div>
                 </div>
             </div>
-            <button class="btn" onclick="basvuruYap()">Yeni Kart Başvurusu Yap</button>
+            <button class="btn" onclick="alert('Giriş Katı Ofisi\'ne gelerek başvurunuzu tamamlayabilirsiniz.')">Yeni Kart Başvurusu Yap</button>
         </section>
 
         <!-- Canlı Blok Borsası -->
@@ -49,7 +300,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th>BLOK / VARLIK</th>
+                        <th>VARLIK</th>
                         <th>DEĞER</th>
                         <th>DEĞİŞİM</th>
                     </tr>
@@ -77,44 +328,62 @@
                     </tr>
                 </tbody>
             </table>
-            <button class="btn" onclick="islemYap()">Hisse / Altın Al-Sat</button>
+            <button class="btn" onclick="alert('Borsa alım-satım işlemleri Vezne\'de yapılmaktadır.')">Hisse / Altın Al-Sat</button>
         </section>
 
-        <!-- Kredi & Faiz Hesaplama Aracı -->
-        <section class="card">
-            <h2>🧮 Hızlı Kredi Hesaplayıcı</h2>
-            <p class="card-desc">İhtiyacın olan tutarı gir, geri ödemeni hesapla:</p>
-            
-            <div class="calc-box">
-                <label for="krediTutar">Çekilecek Tutar (TL):</label>
-                <input type="number" id="krediTutar" placeholder="Örn: 10" value="10">
-                
-                <p class="calc-result">Haftalık Geri Ödeme (%50 Faiz): <span id="geriOdeme">15 TL</span></p>
-            </div>
-            <button class="btn" onclick="krediBasvurusu()">Kredi Talebi Gönder</button>
-        </section>
-
-        <!-- Banka Kuralları & Duyurular -->
-        <section class="card">
-            <h2>📜 Banka Tüzüğü & Duyurular</h2>
-            <ul class="rules-list">
-                <li>🔹 <strong>Borç Ödemeleri:</strong> Kredi borçları her Cuma günü saat 17:00'ye kadar kapatılmalıdır.</li>
-                <li>🔹 <strong>Haciz Kuralı:</strong> Zamanında ödenmeyen borçlarda B ve C Blok tapularına el konulur.</li>
-                <li>🔹 <strong>Faiz Oranı:</strong> Hızlı kredilerde haftalık faiz %50 olarak uygulanır.</li>
-                <li>🔹 <strong>Kiralık Kasa:</strong> Tapu ve bilet koruma kasası haftalık 2 TL'dir.</li>
-            </ul>
-            <div class="announcement">
-                <strong>📢 Şirket Duyurusu:</strong> Eski Subank A.Ş. kapatılmış, yerine resmi olarak Royal Finans Bank kurulmuştur!
-            </div>
+        <!-- Resmi Şirket Hiyerarşisi -->
+        <section class="card card-full">
+            <h2>⚖️ Resmi Şirket Hiyerarşisi ve Üyelik Kademeleri</h2>
+            <p class="card-desc">Şirket nezdinde tanımlanmış resmi kurumsal rütbeler ve haklar:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>RESMİ UNVAN</th>
+                        <th>KREDİ LİMİTİ</th>
+                        <th>KÂR PAYI (TEMETTÜ)</th>
+                        <th>KART TİPİ</th>
+                        <th>GENEL KURUL HAKKI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Müşteri</strong></td>
+                        <td>Standart</td>
+                        <td>Yok</td>
+                        <td>Klasik Kart</td>
+                        <td>Yok</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kıdemli Müşteri</strong></td>
+                        <td>Yüksek</td>
+                        <td>Yok</td>
+                        <td>Silver Kart</td>
+                        <td>Yok</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Şirket Ortağı (Hissedar)</strong></td>
+                        <td>Özel Limit</td>
+                        <td class="up">Var (% Pay)</td>
+                        <td>Gold Kart</td>
+                        <td>Var (1 Oy)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kurumsal VIP Ortak</strong></td>
+                        <td>Sınırsız</td>
+                        <td class="up">Var (Yüksek %)</td>
+                        <td>Black VIP Kart</td>
+                        <td>Var (Ağırlıklı Oy)</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
     </main>
 
     <footer>
         <p>© 2026 ROYAL FİNANS BANK A.Ş. • Tüm Hakları Sitedeki Yönetim Masası'na Aittir.</p>
-        <p class="footer-sub">Genel Başkan Kürşat Erdoğan & Yönetim Kurul Başkanı Yunus Acar Yönetiminde</p>
+        <p class="footer-sub">Yönetim Kurulu Başkanı: Genel Başkan | CEO: Yunus</p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
