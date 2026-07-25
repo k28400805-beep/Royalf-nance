@@ -12,6 +12,7 @@
             --gold-bright: #f59e0b;
             --text-main: #f8fafc;
             --text-sub: #94a3b8;
+            --danger: #ef4444;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
@@ -51,11 +52,12 @@
         .team-role { color: var(--gold-bright); font-size: 0.8rem; font-weight: bold; margin-bottom: 5px; }
         .team-company { color: var(--text-sub); font-size: 0.75rem; }
 
-        /* Fiyat ve Rütbe Tablosu */
+        /* Tablo Stilleri */
         table { width: 100%; border-collapse: collapse; margin-top: 10px; }
         th, td { padding: 12px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 0.95rem; }
         th { color: var(--gold); background: rgba(0,0,0,0.3); }
         .price-tag { color: var(--gold-bright); font-weight: bold; font-size: 1.1rem; }
+        .locked-tag { color: var(--danger); font-weight: bold; font-size: 0.95rem; }
 
         .btn {
             background: linear-gradient(135deg, var(--gold), var(--gold-bright));
@@ -82,7 +84,7 @@
                 <div class="team-card">
                     <div class="avatar">👑</div>
                     <div class="team-title">Kürşat Erdoğan</div>
-                    <div class="team-role">YÖNETİM KURUL BAŞKANI</div>
+                    <div class="team-role">Yönetim Kurul Başkanı</div>
                     <div class="team-company">Royal Holding A.Ş.</div>
                 </div>
                 <div class="team-card">
@@ -115,9 +117,6 @@
         <!-- Unvan & Rütbe Yükseltme Sistemi -->
         <section class="card card-full">
             <h2>💎 Ünvan & Rütbe Yükseltme Tarife Listesi</h2>
-            <p style="color: var(--text-sub); font-size: 0.9rem; margin-bottom: 10px;">
-                Holding bünyesinde yetki kazanmak ve ayrıcalıklardan yararlanmak için Vezne'den rütbenizi yükseltebilirsiniz:
-            </p>
             <table>
                 <thead>
                     <tr>
@@ -130,7 +129,7 @@
                     <tr>
                         <td><strong>👤 Müşteri</strong></td>
                         <td class="price-tag">0 TL</td>
-                        <td>Temal banka hesabı açma, işlem yapma hakkı.</td>
+                        <td>Temel banka hesabı açma, işlem yapma hakkı.</td>
                     </tr>
                     <tr>
                         <td><strong>⭐ Kıdemli Müşteri</strong></td>
@@ -159,7 +158,6 @@
                     </tr>
                 </tbody>
             </table>
-            <button class="btn" onclick="alert('Rütbe yükseltme işlemleri için Royal Finans Veznesi\'ne başvurunuz.')">Rütbe Satın Al / Yükselt</button>
         </section>
 
         <!-- Alt Şirketler Panosu -->
@@ -175,8 +173,58 @@
             <h2>🎟️ Royal Event & Arena</h2>
             <p style="color: var(--text-sub); font-size: 0.9rem;">
                 <strong>Genel Müdür: Melike</strong><br>
-                piyangolar pazartesi günü başlayacaktır herkesi o gün görmek isteriz ayrıca Şirket ortaklarına biletler %50 indirimli!
+                Turnuvalar, maçlar ve yarışmalar. Şirket ortaklarına biletler %50 indirimli!
             </p>
+        </section>
+
+        <!-- YENİ EKLENEN BÖLÜM: EMLAK VE BLOK KİRALARI -->
+        <section class="card card-full">
+            <h2>🏢 Royal Finans Emlak & Blok Kira Portföyü</h2>
+            <p style="color: var(--text-sub); font-size: 0.9rem; margin-bottom: 10px;">
+                Sitedeki blok alanların kullanım ve kiralama hakları Royal Finans Bank A.Ş. güvencesindedir.
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>BLOK ADI</th>
+                        <th>KİRA BEDELİ</th>
+                        <th>DURUM / AÇIKLAMA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>A BLOK</strong></td>
+                        <td class="price-tag">15 TL / Ay</td>
+                        <td>K kiralamaya Açık (Park Yanı)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>B BLOK</strong></td>
+                        <td class="price-tag">20 TL / Ay</td>
+                        <td>Kiralamaya Açık (Merkezi Alan)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>C BLOK</strong></td>
+                        <td class="locked-tag">🔒 SATILMIYOR / KİRALANMAZ</td>
+                        <td><strong>YÖNETİM KURULU OFİSİ (ÖZEL MÜLK)</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>D BLOK</strong></td>
+                        <td class="price-tag">10 TL / Ay</td>
+                        <td>Kiralamaya Açık</td>
+                    </tr>
+                    <tr>
+                        <td><strong>E BLOK</strong></td>
+                        <td class="price-tag">15 TL / Ay</td>
+                        <td>Kiralamaya Açık</td>
+                    </tr>
+                    <tr>
+                        <td><strong>F BLOK</strong></td>
+                        <td class="price-tag">15 TL / Ay</td>
+                        <td>Kiralamaya Açık</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn" onclick="alert('Blok kiralama işlemleri Royal Finans Bank A.Ş. Veznesi\'nde yapılmaktadır.')">Blok Kirala / Sözleşme Yap</button>
         </section>
 
     </main>
