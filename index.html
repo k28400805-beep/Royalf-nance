@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Royal Finans Bank A.Ş. | Kurumsal Web Portalı</title>
+    <title>Royal Holding A.Ş. | Resmi Portalı</title>
     <style>
         :root {
-            --bg-color: #0b1120;
+            --bg-color: #0f172a;
             --card-bg: #1e293b;
             --gold: #d4af37;
             --gold-bright: #f59e0b;
@@ -14,50 +14,21 @@
             --text-sub: #94a3b8;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            padding: 20px;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); padding: 20px; }
 
         header {
             text-align: center;
             padding: 40px 20px;
             border-bottom: 2px solid var(--gold);
-            background: linear-gradient(180deg, rgba(212,175,55,0.15) 0%, rgba(11,17,32,1) 100%);
+            background: linear-gradient(180deg, rgba(212,175,55,0.2) 0%, rgba(15,23,42,1) 100%);
         }
 
-        .logo-crown {
-            font-size: 50px;
-            margin-bottom: 10px;
-        }
+        .logo-crown { font-size: 60px; margin-bottom: 10px; }
+        h1 { color: var(--gold); font-size: 2.8rem; letter-spacing: 3px; }
+        .subtitle { color: var(--text-sub); font-size: 1.1rem; margin-top: 5px; }
 
-        h1 {
-            color: var(--gold);
-            font-size: 2.5rem;
-            letter-spacing: 2px;
-        }
-
-        .subtitle {
-            color: var(--text-sub);
-            font-size: 1.1rem;
-            margin-top: 5px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 30px auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
+        .container { max-width: 1100px; margin: 30px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
 
         .card {
             background-color: var(--card-bg);
@@ -65,380 +36,153 @@
             border-radius: 12px;
             padding: 25px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--gold);
-        }
+        .card:hover { transform: translateY(-5px); border-color: var(--gold); }
+        .card-full { grid-column: 1 / -1; }
+        .card h2 { color: var(--gold); margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
 
-        .card-full {
-            grid-column: 1 / -1;
-        }
+        /* Holding Şeması & Müdürler */
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 15px; }
+        .team-card { background: rgba(15, 23, 42, 0.8); border: 1px solid var(--gold); border-radius: 10px; padding: 15px; text-align: center; }
+        .avatar { font-size: 35px; margin-bottom: 8px; }
+        .team-title { color: var(--gold); font-weight: bold; font-size: 1.1rem; }
+        .team-role { color: var(--gold-bright); font-size: 0.8rem; font-weight: bold; margin-bottom: 5px; }
+        .team-company { color: var(--text-sub); font-size: 0.75rem; }
 
-        .card h2 {
-            color: var(--gold);
-            margin-bottom: 15px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .card-desc {
-            color: var(--text-sub);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        /* Liderlik Kadrosu Stilleri */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .team-card {
-            background: rgba(15, 23, 42, 0.8);
-            border: 1px solid var(--gold);
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .avatar {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--gold), #854d0e);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            margin: 0 auto 15px auto;
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
-        }
-
-        .team-title {
-            color: var(--gold);
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        .team-role {
-            color: var(--gold-bright);
-            font-size: 0.85rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
-
-        .team-bio {
-            color: var(--text-sub);
-            font-size: 0.85rem;
-            line-height: 1.5;
-        }
-
-        /* İstatistik Panosu */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-            text-align: center;
-        }
-
-        .stat-box {
-            background: rgba(0,0,0,0.3);
-            padding: 15px;
-            border-radius: 8px;
-            border-bottom: 2px solid var(--gold);
-        }
-
-        .stat-num {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--gold-bright);
-        }
-
-        .stat-label {
-            font-size: 0.75rem;
-            color: var(--text-sub);
-            margin-top: 5px;
-        }
-
-        /* VIP Kredi Kartı */
-        .credit-card {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            border: 2px solid var(--gold);
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
-        }
-
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .card-title {
-            font-weight: bold;
-            color: var(--gold);
-        }
-
-        .chip {
-            width: 45px;
-            height: 35px;
-            background: linear-gradient(135deg, #f59e0b, #b45309);
-            border-radius: 5px;
-            margin: 15px 0;
-        }
-
-        .card-number {
-            font-family: monospace;
-            font-size: 1.2rem;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-        }
-
-        .card-footer {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .label {
-            font-size: 0.6rem;
-            color: var(--text-sub);
-        }
-
-        .card-holder {
-            color: var(--gold);
-            font-weight: bold;
-            font-size: 0.85rem;
-        }
-
-        /* Tablo Stilleri */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            font-size: 0.9rem;
-        }
-
-        th {
-            color: var(--gold);
-            background: rgba(0,0,0,0.2);
-        }
-
-        .up { color: #22c55e; font-weight: bold; }
+        /* Fiyat ve Rütbe Tablosu */
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 0.95rem; }
+        th { color: var(--gold); background: rgba(0,0,0,0.3); }
+        .price-tag { color: var(--gold-bright); font-weight: bold; font-size: 1.1rem; }
 
         .btn {
             background: linear-gradient(135deg, var(--gold), var(--gold-bright));
-            color: #000;
-            border: none;
-            padding: 12px;
-            border-radius: 6px;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 15px;
+            color: #000; border: none; padding: 12px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%; margin-top: 15px;
         }
 
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            color: var(--text-sub);
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(212,175,55,0.2);
-            padding-top: 20px;
-        }
-
-        .footer-sub {
-            font-size: 0.85rem;
-            margin-top: 5px;
-            color: var(--gold);
-        }
+        footer { text-align: center; margin-top: 50px; color: var(--text-sub); border-top: 1px solid rgba(212,175,55,0.2); padding-top: 20px; }
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo-crown">👑</div>
-        <h1>ROYAL FİNANS BANK A.Ş.</h1>
-        <p class="subtitle">Güçlü Sermaye • Güvenli Gelecek • Giriş Katı Merkez Ofisi</p>
+        <h1>ROYAL HOLDİNG A.Ş.</h1>
+        <p class="subtitle">Finans • Gıda & İkram • Etkinlik & Turnuva</p>
     </header>
 
     <main class="container">
         
-        <!-- Kurumsal Şirket Tanıtımı -->
+        <!-- Üst Yönetim ve Alt Şirket Müdürleri -->
         <section class="card card-full">
-            <h2>🏛️ Şirketimiz Hakkında</h2>
-            <p class="card-desc">
-                <strong>Royal Finans Bank A.Ş.</strong>, bölgesel mülkiyet haklarını, finansal yatırımları, borsa hareketlerini ve ticaret güvenliğini tek bir çatı altında toplayan ana finans kurumudur. Sitedeki tüm üyelerin varlıklarını koruma altına almak, şeffaf bankacılık hizmeti sunmak ve ticari büyümeyi desteklemek amacıyla kurulmuştur.
-            </p>
-            
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <div class="stat-num">%100</div>
-                    <div class="stat-label">Güvenli Sermaye</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-num">VIP</div>
-                    <div class="stat-label">Özel Üyelik Hakları</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-num">7/24</div>
-                    <div class="stat-label">Masa & Vezne Hizmeti</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-num">A.Ş.</div>
-                    <div class="stat-label">Resmi Şirket Yapısı</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Yönetim Kurulu & Liderlik Kadrosu -->
-        <section class="card card-full">
-            <h2>👑 Yönetim Kurulu ve Üst Yönetim</h2>
-            <p class="card-desc">Royal Finans Bank A.Ş.'nin stratejik kararlarını alan ve operasyonlarını yöneten liderlik ekibimiz:</p>
-            
+            <h2>🏛️ Holding Liderlik Kadrosu & Müdürler</h2>
             <div class="team-grid">
                 <div class="team-card">
                     <div class="avatar">👑</div>
-                    <div class="team-title">Genel Başkan</div>
-                    <div class="team-role">Kürşat Erdoğan</div>
-                    <p class="team-bio">
-                        Şirketin ana stratejilerini belirler, büyük yatırımları onaylar ve şirket tüzüğünün uygulanmasını denetler. Bankanın en yüksek karar makamıdır.
-                    </p>
+                    <div class="team-title">Kürşat Erdoğan</div>
+                    <div class="team-role">YÖNETİM KURUL BAŞKANI</div>
+                    <div class="team-company">Royal Holding A.Ş.</div>
                 </div>
-
                 <div class="team-card">
                     <div class="avatar">💼</div>
-                    <div class="team-title">Yönetim Kurul Başkanı</div>
-                    <div class="team-role">Yunus Emre Acar</div>
-                    <p class="team-bio">
-                        Genel Müdür sıfatıyla bankanın günlük finansal akışını, kredi onay süreçlerini, VIP üyelik ilişkilerini ve Vezne operasyonlarını bizzat yürütür.
-                    </p>
+                    <div class="team-title">Yunus Emre</div>
+                    <div class="team-role">BAŞKAN VEKİLİ & CEO</div>
+                    <div class="team-company">Royal Holding A.Ş.</div>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">🏦</div>
+                    <div class="team-title">Ali Kemal</div>
+                    <div class="team-role">GENEL MÜDÜR</div>
+                    <div class="team-company">Royal Finans Bank A.Ş.</div>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">🥤</div>
+                    <div class="team-title">Cemre</div>
+                    <div class="team-role">GENEL MÜDÜR</div>
+                    <div class="team-company">Royal Cafe & Büfe A.Ş.</div>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">🎟️</div>
+                    <div class="team-title">Melike</div>
+                    <div class="team-role">GENEL MÜDÜR</div>
+                    <div class="team-company">Royal Event & Arena A.Ş.</div>
                 </div>
             </div>
         </section>
 
-        <!-- VIP Kredi Kartı Kartı -->
-        <section class="card">
-            <h2>💳 Royal Black VIP Card</h2>
-            <p class="card-desc">Sitedeki tüm harcamalar, bilet alımları ve rütbe geçişlerinde geçerli resmi banka kartı.</p>
-            
-            <div class="credit-card">
-                <div class="card-header">
-                    <span class="card-title">ROYAL FİNANS</span>
-                    <span>👑</span>
-                </div>
-                <div class="chip"></div>
-                <div class="card-number">4589 7700 1923 2026</div>
-                <div class="card-footer">
-                    <div>
-                        <div class="label">KART SAHİBİ</div>
-                        <div class="card-holder">YÜKSEK YÖNETİM / VIP</div>
-                    </div>
-                    <div>
-                        <div class="label">STATUS</div>
-                        <div class="card-holder">EXECUTIVE</div>
-                    </div>
-                </div>
-            </div>
-            <button class="btn" onclick="alert('Giriş Katı Ofisi\'ne gelerek başvurunuzu tamamlayabilirsiniz.')">Kart Başvurusu Yap</button>
-        </section>
-
-        <!-- Canlı Blok Borsası -->
-        <section class="card">
-            <h2>📈 Blok Hisseleri & Borsa</h2>
-            <p class="card-desc">Sitedeki blokların anlık piyasa değerleri:</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>VARLIK</th>
-                        <th>DEĞER</th>
-                        <th>DURUM</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>A Bloğu (Park Yanı)</td>
-                        <td>5.0 TL</td>
-                        <td class="up">+15% 🚀</td>
-                    </tr>
-                    <tr>
-                        <td>B Bloğu (Orta Alan)</td>
-                        <td>3.5 TL</td>
-                        <td class="up">+5% 📈</td>
-                    </tr>
-                    <tr>
-                        <td>1 Gram Altın</td>
-                        <td>8.0 TL</td>
-                        <td class="up">+25% 💎</td>
-                    </tr>
-                </tbody>
-            </table>
-            <button class="btn" onclick="alert('Borsa alım-satım işlemleri Vezne\'de yapılmaktadır.')">Hisse / Altın Al-Sat</button>
-        </section>
-
-        <!-- Resmi Şirket Hiyerarşisi -->
+        <!-- Unvan & Rütbe Yükseltme Sistemi -->
         <section class="card card-full">
-            <h2>⚖️ Şirket Üyelik Kademeleri</h2>
+            <h2>💎 Ünvan & Rütbe Yükseltme Tarife Listesi</h2>
+            <p style="color: var(--text-sub); font-size: 0.9rem; margin-bottom: 10px;">
+                Holding bünyesinde yetki kazanmak ve ayrıcalıklardan yararlanmak için Vezne'den rütbenizi yükseltebilirsiniz:
+            </p>
             <table>
                 <thead>
                     <tr>
-                        <th>RESMİ UNVAN</th>
-                        <th>KREDİ LİMİTİ</th>
-                        <th>KÂR PAYI</th>
-                        <th>KART TİPİ</th>
+                        <th>ÜNVAN / RÜTBE</th>
+                        <th>ÜCRET</th>
+                        <th>AYRICALIKLAR & HAKLAR</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Müşteri</strong></td>
-                        <td>Standart</td>
-                        <td>Yok</td>
-                        <td>Klasik Kart</td>
+                        <td><strong>👤 Müşteri</strong></td>
+                        <td class="price-tag">0 TL</td>
+                        <td>Temal banka hesabı açma, işlem yapma hakkı.</td>
                     </tr>
                     <tr>
-                        <td><strong>Kıdemli Müşteri</strong></td>
-                        <td>Yüksek</td>
-                        <td>Yok</td>
-                        <td>Silver Kart</td>
+                        <td><strong>⭐ Kıdemli Müşteri</strong></td>
+                        <td class="price-tag">5 TL</td>
+                        <td>Cafe'de VIP öncelik, bankada sıra beklemeden işlem.</td>
                     </tr>
                     <tr>
-                        <td><strong>Şirket Ortağı (Hissedar)</strong></td>
-                        <td>Özel Limit</td>
-                        <td class="up">Var (% Pay)</td>
-                        <td>Gold Kart</td>
+                        <td><strong>💼 Şirket Ortağı</strong></td>
+                        <td class="price-tag">20 TL</td>
+                        <td>Alt şirketlerin (Cafe/Event) haftalık kârından % pay alma.</td>
                     </tr>
                     <tr>
-                        <td><strong>Kurumsal VIP Ortak</strong></td>
-                        <td>Sınırsız</td>
-                        <td class="up">Var (Yüksek %)</td>
-                        <td>Black VIP Kart</td>
+                        <td><strong>🏛️ Yönetim Kurulu Üyesi</strong></td>
+                        <td class="price-tag">35 TL</td>
+                        <td>Holding toplantılarına katılma, oy kullanma hakkı.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🎖️ Başkan Yardımcısı</strong></td>
+                        <td class="price-tag">35 TL</td>
+                        <td>Alt şirketleri denetleme ve müdürlere talimat verme.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>👑 Başkan</strong></td>
+                        <td class="price-tag">40 TL</td>
+                        <td>En üst düzey karar alma ve veto yetkisi.</td>
                     </tr>
                 </tbody>
             </table>
+            <button class="btn" onclick="alert('Rütbe yükseltme işlemleri için Royal Finans Veznesi\'ne başvurunuz.')">Rütbe Satın Al / Yükselt</button>
+        </section>
+
+        <!-- Alt Şirketler Panosu -->
+        <section class="card">
+            <h2>🥤 Royal Cafe & Büfe</h2>
+            <p style="color: var(--text-sub); font-size: 0.9rem;">
+                <strong>Genel Müdür: Cemre</strong><br>
+                Sitedeki içecek, cips ve ikram tedariği. Kıdemli müşterilere özel ikramlar mevcuttur.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>🎟️ Royal Event & Arena</h2>
+            <p style="color: var(--text-sub); font-size: 0.9rem;">
+                <strong>Genel Müdür: Melike</strong><br>
+                piyangolar pazartesi günü başlayacaktır herkesi o gün görmek isteriz ayrıca Şirket ortaklarına biletler %50 indirimli!
+            </p>
         </section>
 
     </main>
 
     <footer>
-        <p>© 2026 ROYAL FİNANS BANK A.Ş. • Tüm Hakları Sitedeki Yönetim Masası'na Aittir.</p>
-        <p class="footer-sub">Genel Müdür Muhammed Kürşat Erdoğan | Yönetim Kurul Başkanı Yunus Emre Acar</p>
+        <p>© 2026 ROYAL HOLDİNG A.Ş. • Tüm Hakları Saklıdır.</p>
     </footer>
 
 </body>
